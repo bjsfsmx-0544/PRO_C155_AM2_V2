@@ -1,4 +1,4 @@
-//Terrain Rotation
+// Rotación del terreno
 AFRAME.registerComponent("terrain-rotation-reader", {
   schema: {
     speedOfRotation: { type: "number", default: 0 },
@@ -30,7 +30,7 @@ AFRAME.registerComponent("terrain-rotation-reader", {
   },
 });
 
-//Plane rotation component
+// COmponente de rotación del avión
 AFRAME.registerComponent("plane-rotation-reader", {
   schema: {
     speedOfRotation: { type: "number", default: 0 },
@@ -38,14 +38,14 @@ AFRAME.registerComponent("plane-rotation-reader", {
   },
   init: function () {
     window.addEventListener("keydown", (e) => {
-      //get the data from the attributes
+      // Obtener los datos de los atributos
       this.data.speedOfRotation = this.el.getAttribute("rotation");
       this.data.speedOfAscent = this.el.getAttribute("position");
 
       var planeRotation = this.data.speedOfRotation;
       var planePosition = this.data.speedOfAscent;
 
-      //control the attributes with the Arrow Keys
+      // Controlar los atributos con las flechas del teclado
       if (e.key === "ArrowRight") {
         if (planeRotation.x < 10) {
           planeRotation.x += 0.5;
