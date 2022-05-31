@@ -1,19 +1,19 @@
-// Registering component in Target.js
+// Registrando el componente en Target.js
 
 AFRAME.registerComponent("target-ring", {
   init: function () {
     for (var i = 1; i <= 20; i++) {
-      //id
+      // ID
       var id = `ring${i}`;
 
-      //position variables
+      // Variables de posición
       var posX = Math.random() * 3000 + (-1000);      
       var posY = Math.random() * 2 + (-1);
       var posZ = Math.random() * 3000 + -1000;
 
       var position = { x: posX, y: posY, z: posZ };
 
-      //call the function
+      // Llamada a la función
       this.createRings(id, position);
     }
   },
@@ -27,7 +27,7 @@ AFRAME.registerComponent("target-ring", {
     ringEl.setAttribute("position",position);
     ringEl.setAttribute("geometry",{ primitive: "torus",radius: 8 });   
 
-    //set the static body attribute of physics system 
+    // Establecer el atributo del cuerpo estático del sistema físico
     ringEl.setAttribute("static-body", {
       shape: "sphere",
       sphereRadius: 2
