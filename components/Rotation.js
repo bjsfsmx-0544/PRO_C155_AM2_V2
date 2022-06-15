@@ -30,7 +30,7 @@ AFRAME.registerComponent("terrain-rotation-reader", {
   },
 });
 
-// COmponente de rotación del avión
+// Componente de rotación del avión
 AFRAME.registerComponent("plane-rotation-reader", {
   schema: {
     speedOfRotation: { type: "number", default: 0 },
